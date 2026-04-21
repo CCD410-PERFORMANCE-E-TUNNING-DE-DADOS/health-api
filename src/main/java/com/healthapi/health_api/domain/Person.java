@@ -13,28 +13,44 @@ public class Person implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    private String id;
+    private Long id;
     private String cpf;
     private String name;
     private Date birthDate;
     private String phoneNumber;
     private String cep;
-    //private String address?
+    private String cidade
     private String uf;
+    private String logradouro;
+    private String numLogradouro;
+    private String complement;
     private String email;
 
-    public Person(String id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String uf, String email) {
+    public Person(Long id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String cidade,
+                  String uf, String logradouro, String numLogradouro, String complement, String email) {
         this.id = id;
         this.cpf = cpf;
         this.name = name;
         this.birthDate = birthDate;
         this.phoneNumber = phoneNumber;
         this.cep = cep;
+        this.cidade = cidade;
         this.uf = uf;
+        this.logradouro = logradouro;
+        this.numLogradouro = numLogradouro;
+        this.complement = complement;
         this.email = email;
     }
 
-    public Person() {}
+    //public Person() {}
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getCpf() {
         return cpf;
@@ -76,12 +92,44 @@ public class Person implements Serializable {
         this.cep = cep;
     }
 
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
     public String getUf() {
         return uf;
     }
 
     public void setUf(String uf) {
         this.uf = uf;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    public String getNumLogradouro() {
+        return numLogradouro;
+    }
+
+    public void setNumLogradouro(String numLogradouro) {
+        this.numLogradouro = numLogradouro;
+    }
+
+    public String getComplement() {
+        return complement;
+    }
+
+    public void setComplement(String complement) {
+        this.complement = complement;
     }
 
     public String getEmail() {

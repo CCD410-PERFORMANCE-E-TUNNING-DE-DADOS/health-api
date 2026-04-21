@@ -9,13 +9,13 @@ import java.util.Objects;
 public class Worker extends Person{
 
     @Id
-    private String workerId;
+    private Long workerId;
     private String login;
     private String password;
     private String workerStatus;
     private Date workerStartDate;
 
-    public Worker(String id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String uf,
+    public Worker(Long id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String uf,
                   String email, String workerId, String login, String password, String workerStatus, Date workerStartDate) {
         super(id, cpf, name, birthDate, phoneNumber, cep, uf, email);
         this.workerId = workerId;
@@ -35,11 +35,11 @@ public class Worker extends Person{
 
     public Worker(){}
 
-    public String getWorkerId() {
+    public Long getWorkerId() {
         return workerId;
     }
 
-    public void setWorkerId(String workerId) {
+    public void setWorkerId(Long workerId) {
         this.workerId = workerId;
     }
 

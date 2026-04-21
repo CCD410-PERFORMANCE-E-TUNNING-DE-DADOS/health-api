@@ -12,21 +12,10 @@ public class Nurse extends Worker implements Serializable {
     private String coren;
     private String shift;
 
-    public Nurse(String id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String uf,
+    public Nurse(Long id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String uf,
                  String email, String workerId, String login, String password, String workerStatus, Date workerStartDate,
                  String coren, String shift) {
         super(id, cpf, name, birthDate, phoneNumber, cep, uf, email, workerId, login, password, workerStatus, workerStartDate);
-        this.coren = coren;
-        this.shift = shift;
-    }
-
-    public Nurse(String workerId, String login, String password, String workerStatus, Date workerStartDate, String coren, String shift) {
-        super(workerId, login, password, workerStatus, workerStartDate);
-        this.coren = coren;
-        this.shift = shift;
-    }
-
-    public Nurse(String coren, String shift) {
         this.coren = coren;
         this.shift = shift;
     }
