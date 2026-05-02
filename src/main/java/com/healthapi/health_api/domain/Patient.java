@@ -1,21 +1,23 @@
 package com.healthapi.health_api.domain;
 
-import org.springframework.data.annotation.Id;
+
 
 import java.util.Date;
 import java.util.Objects;
 
 public class Patient extends Person {
 
-    @Id
+
     private Long patientId;
     private String healthPlan;
     private String healthPlanId;
     private String bloodType;
+    private Date lastAppointment;
 
-    public Patient(Long id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String uf,
-                   String email, Long patientId, String healthPlan, String healthPlanId, String bloodType, Date lastAppointment) {
-        super(id, cpf, name, birthDate, phoneNumber, cep, uf, email);
+    public Patient(Long id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String cidade, String uf,
+                   String logradouro, String numLogradouro, String complement, String email, Long patientId, String healthPlan,
+                   String healthPlanId, String bloodType, Date lastAppointment) {
+        super(id, cpf, name, birthDate, phoneNumber, cep, cidade, uf, logradouro, numLogradouro, complement, email);
         this.patientId = patientId;
         this.healthPlan = healthPlan;
         this.healthPlanId = healthPlanId;
@@ -23,15 +25,13 @@ public class Patient extends Person {
         this.lastAppointment = lastAppointment;
     }
 
-
-
     public Patient() {}
 
-    public String getPatientId() {
+    public Long getPatientId() {
         return patientId;
     }
 
-    public void setPatientId(String patientId) {
+    public void setPatientId(Long patientId) {
         this.patientId = patientId;
     }
 

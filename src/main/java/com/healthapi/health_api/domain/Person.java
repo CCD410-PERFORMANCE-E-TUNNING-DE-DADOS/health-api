@@ -1,7 +1,5 @@
 package com.healthapi.health_api.domain;
 
-import org.springframework.data.annotation.Id;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
@@ -12,14 +10,14 @@ public class Person implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    @Id
+
     private Long id;
     private String cpf;
     private String name;
     private Date birthDate;
     private String phoneNumber;
     private String cep;
-    private String cidade
+    private String cidade;
     private String uf;
     private String logradouro;
     private String numLogradouro;
@@ -42,7 +40,7 @@ public class Person implements Serializable {
         this.email = email;
     }
 
-    //public Person() {}
+    public Person() {}
 
     public Long getId() {
         return id;

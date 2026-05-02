@@ -10,26 +10,17 @@ public class Receptionist extends Worker implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String sector;
-    private int extension; //ramal?
     private String workPhoneNumber;
     private String shift;
 
-    public Receptionist(Long id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String uf,
-                        String email, String workerId, String login, String password, String workerStatus, Date workerStartDate,
-                        String sector, int extension, String workPhoneNumber, String shift) {
-        super(id, cpf, name, birthDate, phoneNumber, cep, uf, email, workerId, login, password, workerStatus, workerStartDate);
+    public Receptionist(Long id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String cidade, String uf, String logradouro, String numLogradouro, String complement, String email, Long workerId, String login, String password, String workerStatus, Date workerStartDate, String sector, String workPhoneNumber, String shift) {
+        super(id, cpf, name, birthDate, phoneNumber, cep, cidade, uf, logradouro, numLogradouro, complement, email, workerId, login, password, workerStatus, workerStartDate);
         this.sector = sector;
-        this.extension = extension;
         this.workPhoneNumber = workPhoneNumber;
         this.shift = shift;
     }
 
-
-    public Receptionist(String sector, String extension, String workPhoneNumber, String shift) {
-        this.sector = sector;
-        this.extension = extension;
-        this.workPhoneNumber = workPhoneNumber;
-        this.shift = shift;
+    public Receptionist() {
     }
 
     public String getSector() {
@@ -38,14 +29,6 @@ public class Receptionist extends Worker implements Serializable {
 
     public void setSector(String sector) {
         this.sector = sector;
-    }
-
-    public int getExtension() {
-        return extension;
-    }
-
-    public void setExtension(int extension) {
-        this.extension = extension;
     }
 
     public String getWorkPhoneNumber() {

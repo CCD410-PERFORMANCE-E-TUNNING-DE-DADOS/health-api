@@ -1,31 +1,21 @@
 package com.healthapi.health_api.domain;
 
-import org.springframework.dao.DataAccessException;
-import org.springframework.data.annotation.Id;
-
 import java.util.Date;
 import java.util.Objects;
 
 public class Worker extends Person{
 
-    @Id
+
     private Long workerId;
     private String login;
     private String password;
     private String workerStatus;
     private Date workerStartDate;
 
-    public Worker(Long id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String uf,
-                  String email, String workerId, String login, String password, String workerStatus, Date workerStartDate) {
-        super(id, cpf, name, birthDate, phoneNumber, cep, uf, email);
-        this.workerId = workerId;
-        this.login = login;
-        this.password = password;
-        this.workerStatus = workerStatus;
-        this.workerStartDate = workerStartDate;
-    }
-
-    public Worker(String workerId, String login, String password, String workerStatus, Date workerStartDate) {
+    public Worker(Long id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String cidade, String uf,
+                  String logradouro, String numLogradouro, String complement, String email, Long workerId, String login,
+                  String password, String workerStatus, Date workerStartDate) {
+        super(id, cpf, name, birthDate, phoneNumber, cep, cidade, uf, logradouro, numLogradouro, complement, email);
         this.workerId = workerId;
         this.login = login;
         this.password = password;
