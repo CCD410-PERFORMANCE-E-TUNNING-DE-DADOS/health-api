@@ -1,8 +1,10 @@
 package com.healthapi.health_api.dto;
 
 import java.util.Date;
+import java.util.List;
 
-public record RegistrarFuncRequestDTO(
+public record RegistrarPacienteDTO(
+
     String cpf,
     String name,
     Date birthDate,
@@ -11,14 +13,15 @@ public record RegistrarFuncRequestDTO(
     String cep,
     String cidade,
     String uf,
-
     String logradouro,
     String numLogradouro,
     String complement,
-
     String email,
 
-    String login,
-    String password,
-    String workerStatus
+    String healthPlan,
+    String healthPlanId,
+    String bloodType,
+
+    List<String> alergias,
+    List<String> remediosRecorrentes
 ) {}

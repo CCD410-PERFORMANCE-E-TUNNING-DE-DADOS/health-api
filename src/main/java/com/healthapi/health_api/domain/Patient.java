@@ -1,7 +1,6 @@
 package com.healthapi.health_api.domain;
 
-
-
+import java.util.List;
 import java.util.Date;
 import java.util.Objects;
 
@@ -13,6 +12,8 @@ public class Patient extends Person {
     private String healthPlanId;
     private String bloodType;
     private Date lastAppointment;
+    private List<String> alergias;
+    private List<String> remediosRecorrentes;
 
     public Patient(int id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String cidade, String uf,
                    String logradouro, String numLogradouro, String complement, String email, int patientId, String healthPlan,
@@ -65,6 +66,22 @@ public class Patient extends Person {
 
     public void setLastAppointment(Date lastAppointment) {
         this.lastAppointment = lastAppointment;
+    }
+
+    public List<String> getAlergias() {
+        return alergias;
+    }
+
+    public void setAlergias(List<String> alergias) {
+        this.alergias = alergias;
+    }
+
+    public List<String> getRemediosRecorrentes() {
+        return remediosRecorrentes;
+    }
+
+    public void setRemediosRecorrentes(List<String> remediosRecorrentes) {
+        this.remediosRecorrentes = remediosRecorrentes;
     }
 
     @Override

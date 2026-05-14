@@ -87,7 +87,6 @@ public class WorkerRepository {
     }
 
     public Worker save(Worker worker) {
-
         // =========================
         // INSERT pessoa
         // =========================
@@ -194,4 +193,5 @@ public class WorkerRepository {
 
         return worker;
     }
+
 }

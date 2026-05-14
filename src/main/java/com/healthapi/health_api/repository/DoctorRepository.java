@@ -1,14 +1,13 @@
 package com.healthapi.health_api.repository;
 
-import com.healthapi.health_api.domain.Schedule;
-import com.healthapi.health_api.domain.Patient;
-
-import com.healthapi.health_api.dto.CriarConsultaDTO;
+import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import com.healthapi.health_api.domain.Patient;
+import com.healthapi.health_api.domain.Schedule;
+import com.healthapi.health_api.dto.CriarConsultaDTO;
 
 @Repository
 public class DoctorRepository {
@@ -148,4 +147,21 @@ public class DoctorRepository {
             dto.funcionarioId()
         );
     }
+
+    public void finishSchedule(int consultaId, String statusConsulta) {
+        String sql = """
+            UPDATE consulta
+
+            SET statusconsulta = ?
+
+            WHERE consultaid = ?
+        """;
+
+        jdbc.update(
+            sql,
+            statusConsulta,
+            consultaId
+        );
+    }
+    
 }
