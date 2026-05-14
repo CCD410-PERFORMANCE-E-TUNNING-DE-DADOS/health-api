@@ -10,4 +10,10 @@ spring.datasource.hikari.schema=schema
 # mongodb
 spring.data.mongodb.uri=mongodb://user:senha@hostname:27017/dbname?authSource=admin
 
+# casandra
+spring.cassandra.contact-points=containername
+spring.cassandra.port=9042
+spring.cassandra.keyspace-name=dbname
+spring.cassandra.local-datacenter=dc1
+
 api.security.token.secret=anything
