@@ -8,10 +8,10 @@ import java.util.Objects;
 public class Person implements Serializable {
 
     @Serial
-    private static final long serialVersionUID = 1L;
+    private static final Long serialVersionUID = 1L;
 
 
-    private Long id;
+    private int id;
     private String cpf;
     private String name;
     private Date birthDate;
@@ -24,7 +24,7 @@ public class Person implements Serializable {
     private String complement;
     private String email;
 
-    public Person(Long id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String cidade,
+    public Person(int id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String cidade,
                   String uf, String logradouro, String numLogradouro, String complement, String email) {
         this.id = id;
         this.cpf = cpf;
@@ -42,11 +42,11 @@ public class Person implements Serializable {
 
     public Person() {}
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

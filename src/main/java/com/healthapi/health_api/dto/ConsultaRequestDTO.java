@@ -4,9 +4,9 @@ import java.util.Date;
 
 public record ConsultaRequestDTO(
 
-    Long consultaId,
-    Long pacienteId,
-    Long funcionarioId,
+    int consultaId,
+    int pacienteId,
+    int funcionarioId,
     Boolean retorno,
     Date dtConsulta,
     String statusConsulta

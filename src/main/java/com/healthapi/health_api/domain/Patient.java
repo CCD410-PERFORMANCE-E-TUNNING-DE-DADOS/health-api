@@ -8,14 +8,14 @@ import java.util.Objects;
 public class Patient extends Person {
 
 
-    private Long patientId;
+    private int patientId;
     private String healthPlan;
     private String healthPlanId;
     private String bloodType;
     private Date lastAppointment;
 
-    public Patient(Long id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String cidade, String uf,
-                   String logradouro, String numLogradouro, String complement, String email, Long patientId, String healthPlan,
+    public Patient(int id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String cidade, String uf,
+                   String logradouro, String numLogradouro, String complement, String email, int patientId, String healthPlan,
                    String healthPlanId, String bloodType, Date lastAppointment) {
         super(id, cpf, name, birthDate, phoneNumber, cep, cidade, uf, logradouro, numLogradouro, complement, email);
         this.patientId = patientId;
@@ -27,11 +27,11 @@ public class Patient extends Person {
 
     public Patient() {}
 
-    public Long getPatientId() {
+    public int getPatientId() {
         return patientId;
     }
 
-    public void setPatientId(Long patientId) {
+    public void setPatientId(int patientId) {
         this.patientId = patientId;
     }
 

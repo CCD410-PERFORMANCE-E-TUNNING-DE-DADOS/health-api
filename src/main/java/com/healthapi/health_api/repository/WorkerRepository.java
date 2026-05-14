@@ -57,7 +57,7 @@ public class WorkerRepository {
                 sql,
                 (rs, rowNum) -> new Worker(
 
-                    rs.getLong("id"),
+                    rs.getInt("id"),
                     rs.getString("cpf"),
                     rs.getString("name"),
                     rs.getDate("birth_date"),
@@ -70,7 +70,7 @@ public class WorkerRepository {
                     rs.getString("complement"),
                     rs.getString("email"),
 
-                    rs.getLong("worker_id"),
+                    rs.getInt("worker_id"),
                     rs.getString("login"),
                     rs.getString("password"),
                     rs.getString("worker_status"),
@@ -141,8 +141,8 @@ public class WorkerRepository {
 
         }, personKeyHolder);
 
-        Long personId =
-            personKeyHolder.getKey().longValue();
+        int personId =
+            personKeyHolder.getKey().intValue();
 
         worker.setId(personId);
 
@@ -171,7 +171,7 @@ public class WorkerRepository {
                 new String[] { "funcionarioid" }
             );
 
-            ps.setLong(1, personId);
+            ps.setInt(1, personId);
             ps.setString(2, worker.getLogin());
             ps.setString(3, worker.getPassword());
             ps.setString(4, worker.getWorkerStatus());
@@ -187,8 +187,8 @@ public class WorkerRepository {
 
         }, workerKeyHolder);
 
-        Long workerId =
-            workerKeyHolder.getKey().longValue();
+        int workerId =
+            workerKeyHolder.getKey().intValue();
 
         worker.setWorkerId(workerId);
 

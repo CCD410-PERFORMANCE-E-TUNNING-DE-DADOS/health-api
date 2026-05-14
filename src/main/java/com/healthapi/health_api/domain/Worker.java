@@ -6,14 +6,14 @@ import java.util.Objects;
 public class Worker extends Person{
 
 
-    private Long workerId;
+    private int workerId;
     private String login;
     private String password;
     private String workerStatus;
     private Date workerStartDate;
 
-    public Worker(Long id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String cidade, String uf,
-                  String logradouro, String numLogradouro, String complement, String email, Long workerId, String login,
+    public Worker(int id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String cidade, String uf,
+                  String logradouro, String numLogradouro, String complement, String email, int workerId, String login,
                   String password, String workerStatus, Date workerStartDate) {
         super(id, cpf, name, birthDate, phoneNumber, cep, cidade, uf, logradouro, numLogradouro, complement, email);
         this.workerId = workerId;
@@ -25,11 +25,11 @@ public class Worker extends Person{
 
     public Worker(){}
 
-    public Long getWorkerId() {
+    public int getWorkerId() {
         return workerId;
     }
 
-    public void setWorkerId(Long workerId) {
+    public void setWorkerId(int workerId) {
         this.workerId = workerId;
     }
 

@@ -13,7 +13,7 @@ public class Receptionist extends Worker implements Serializable {
     private String workPhoneNumber;
     private String shift;
 
-    public Receptionist(Long id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String cidade, String uf, String logradouro, String numLogradouro, String complement, String email, Long workerId, String login, String password, String workerStatus, Date workerStartDate, String sector, String workPhoneNumber, String shift) {
+    public Receptionist(int id, String cpf, String name, Date birthDate, String phoneNumber, String cep, String cidade, String uf, String logradouro, String numLogradouro, String complement, String email, int workerId, String login, String password, String workerStatus, Date workerStartDate, String sector, String workPhoneNumber, String shift) {
         super(id, cpf, name, birthDate, phoneNumber, cep, cidade, uf, logradouro, numLogradouro, complement, email, workerId, login, password, workerStatus, workerStartDate);
         this.sector = sector;
         this.workPhoneNumber = workPhoneNumber;
