@@ -1,0 +1,13 @@
+spring.application.name=name
+
+# postgresql
+spring.datasource.url=jdbc:postgresql://hostname:post/dbname
+spring.datasource.username=user
+spring.datasource.password=psk
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.hikari.schema=schema
+
+# mongodb
+spring.data.mongodb.uri=mongodb://user:senha@hostname:27017/dbname?authSource=admin
+
+api.security.token.secret=anything

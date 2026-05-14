@@ -1,50 +1,96 @@
 package com.healthapi.health_api.domain;
 
-import java.io.Serial;
-import java.io.Serializable;
 import java.util.Date;
 
-public class Schedule implements Serializable {
+public class Schedule {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+    private Long consultaId;
 
+    private Long pacienteId;
 
-    private String scheduleId;
-    private Date scheduleBeginingDate;
-    private Date scheduleEndingDate;
+    private Long funcionarioId;
 
-    public Schedule(String scheduleId, Date scheduleBeginingDate, Date scheduleEndingDate) {
-        this.scheduleId = scheduleId;
-        this.scheduleBeginingDate = scheduleBeginingDate;
-        this.scheduleEndingDate = scheduleEndingDate;
-    }
+    private Date dtConsulta;
+    
+    private String descricao;
+
+    private String encaminhamento;
+
+    private Boolean retorno;
 
     public Schedule() {}
 
-    public String getScheduleId() {
-        return scheduleId;
+    public Schedule(
+            Long consultaId,
+            Long pacienteId,
+            Long funcionarioId,
+            Date dtConsulta,
+            Boolean retorno,
+            String descricao,
+            String encaminhamento
+    ) {
+        this.consultaId = consultaId;
+        this.pacienteId = pacienteId;
+        this.funcionarioId = funcionarioId;
+        this.dtConsulta = dtConsulta;
+        this.retorno = retorno;
+        this.descricao = descricao;
+        this.encaminhamento = encaminhamento;
     }
 
-    public void setScheduleId(String scheduleId) {
-        this.scheduleId = scheduleId;
+    public Long getConsultaId() {
+        return consultaId;
     }
 
-    public Date getScheduleBeginingDate() {
-        return scheduleBeginingDate;
+    public void setConsultaId(Long consultaId) {
+        this.consultaId = consultaId;
     }
 
-    public void setScheduleBeginingDate(Date scheduleBeginingDate) {
-        this.scheduleBeginingDate = scheduleBeginingDate;
+    public Long getPacienteId() {
+        return pacienteId;
     }
 
-    public Date getScheduleEndingDate() {
-        return scheduleEndingDate;
+    public void setPacienteId(Long pacienteId) {
+        this.pacienteId = pacienteId;
     }
 
-    public void setScheduleEndingDate(Date scheduleEndingDate) {
-        this.scheduleEndingDate = scheduleEndingDate;
+    public Long getFuncionarioId() {
+        return funcionarioId;
     }
 
+    public void setFuncionarioId(Long funcionarioId) {
+        this.funcionarioId = funcionarioId;
+    }
 
+    public Date getDtConsulta() {
+        return dtConsulta;
+    }
+
+    public void setDtConsulta(Date dtConsulta) {
+        this.dtConsulta = dtConsulta;
+    }
+
+    public Boolean getRetorno() {
+        return retorno;
+    }
+
+    public void setRetorno(Boolean retorno) {
+        this.retorno = retorno;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getEncaminhamento() {
+        return encaminhamento;
+    }
+
+    public void setEncaminhamento(String encaminhamento) {
+        this.encaminhamento = encaminhamento;
+    }
 }
