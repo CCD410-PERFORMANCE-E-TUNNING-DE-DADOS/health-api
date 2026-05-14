@@ -37,9 +37,7 @@ public class AuthService {
         );
     }
 
-    public RegistrarFuncResponseDTO registrar_funcionario(
-            RegistrarFuncRequestDTO dto
-    ) {
+    public RegistrarFuncResponseDTO registrar_funcionario(RegistrarFuncRequestDTO dto) {
 
         if (workerRepository
                 .findByLogin(dto.login())
@@ -53,47 +51,29 @@ public class AuthService {
         Worker worker = new Worker();
 
         worker.setCpf(dto.cpf());
-
         worker.setName(dto.name());
-
         worker.setBirthDate(dto.birthDate());
-
         worker.setPhoneNumber(dto.phoneNumber());
-
         worker.setCep(dto.cep());
-
         worker.setCidade(dto.cidade());
-
         worker.setUf(dto.uf());
-
         worker.setLogradouro(dto.logradouro());
-
         worker.setNumLogradouro(dto.numLogradouro());
-
         worker.setComplement(dto.complement());
-
         worker.setEmail(dto.email());
-
         worker.setLogin(dto.login());
 
-        // temporário
         worker.setPassword(dto.password());
-
         worker.setWorkerStatus(dto.workerStatus());
-
         worker.setWorkerStartDate(new Date());
 
         Worker savedWorker =
                 workerRepository.save(worker);
 
         return new RegistrarFuncResponseDTO(
-
                 savedWorker.getWorkerId(),
-
                 savedWorker.getLogin(),
-
                 savedWorker.getName(),
-
                 savedWorker.getWorkerStatus()
         );
     }

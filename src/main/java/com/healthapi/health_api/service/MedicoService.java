@@ -1,6 +1,8 @@
 package com.healthapi.health_api.service;
 
 import com.healthapi.health_api.domain.Schedule;
+import com.healthapi.health_api.domain.Patient;
+
 import com.healthapi.health_api.repository.DoctorRepository;
 
 import org.springframework.stereotype.Service;
@@ -24,5 +26,13 @@ public class MedicoService {
 
         return doctorRepository
                 .listSchedulesByDoc(workerId);
+    }
+
+    public List<Patient> listPatientsByDoc(
+            Long workerId
+    ) {
+
+        return doctorRepository
+                .listPatientsByDoc(workerId);
     }
 }

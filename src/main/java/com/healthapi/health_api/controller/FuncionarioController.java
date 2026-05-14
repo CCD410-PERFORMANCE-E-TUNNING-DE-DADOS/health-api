@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.healthapi.health_api.domain.Schedule;
+import com.healthapi.health_api.domain.Patient;
+
 import com.healthapi.health_api.service.MedicoService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,9 +18,7 @@ import java.util.List;
 public class FuncionarioController {
     private final MedicoService doctorService;
 
-    public FuncionarioController(
-            MedicoService doctorService
-    ) {
+    public FuncionarioController(MedicoService doctorService) {
         this.doctorService = doctorService;
     }
 
@@ -34,5 +34,19 @@ public class FuncionarioController {
                         .listSchedulesByDoc(workerId);
 
         return ResponseEntity.ok(consultas);
+    }
+
+    @GetMapping("/medico/listar/pacientes")
+    public ResponseEntity<List<Patient>>
+    listarPacientes(
+
+            @RequestParam Long workerId
+    ) {
+
+        List<Patient> patients =
+                doctorService
+                        .listPatientsByDoc(workerId);
+
+        return ResponseEntity.ok(patients);
     }
 }

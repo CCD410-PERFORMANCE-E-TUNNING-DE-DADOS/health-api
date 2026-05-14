@@ -16,16 +16,17 @@ import com.healthapi.health_api.service.AuthService;
 @RequestMapping("/auth")
 public class AuthController {
 
-    private final AuthService authService;
+    private final AuthService auth;
 
     public AuthController(AuthService authService) {
-        this.authService = authService;
+        this.auth = authService;
     }
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDTO> login(@RequestBody LoginRequestDTO dto) {
         return ResponseEntity.ok(
-                authService.login(dto)
+                auth
+                    .login(dto)
         );
     }
 
@@ -33,7 +34,8 @@ public class AuthController {
     public ResponseEntity<RegistrarFuncResponseDTO> registrar_funcionario(@RequestBody RegistrarFuncRequestDTO dto) {
 
         return ResponseEntity.ok(
-                authService.registrar_funcionario(dto)
+                auth
+                    .registrar_funcionario(dto)
         );
     }
 }
