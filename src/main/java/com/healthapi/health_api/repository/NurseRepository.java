@@ -143,11 +143,8 @@ public class NurseRepository {
 
             for (String alergia : patient.getAlergias()) {
                 jdbc.update(
-
                         insertAlergia,
-
                         alergia,
-
                         pacienteId
                 );
             }
